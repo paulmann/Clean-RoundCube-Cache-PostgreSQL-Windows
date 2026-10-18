@@ -121,7 +121,7 @@ set PGPASSWORD=secret && Clean_RoundCube_Cache.bat
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+PolyForm Noncommercial 1.0.0 — see [LICENSE](LICENSE)
 
 ---
 
