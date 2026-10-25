@@ -23,9 +23,9 @@
 | रंग-कोडित आउटपुट | हाँ (Cyan / Green / Red / Yellow) | उपसर्ग टैग: `[OK]` / `[FAIL]` / `[WARN]` |
 | टाइप किए गए पैरामीटर (`-PgHost`, `-PgUser` …) | हाँ, पूरा `[CmdletBinding]` | नहीं (फ़ाइल के ऊपर वेरिएबल संपादित करें) |
 | `-NoConfirm` साइलेंट मोड | हाँ (`-NoConfirm` स्विच) | नहीं (हमेशा पूछता है) |
-| env के माध्यम से पहले से सेट पासवर्ड | `$env:PGPASSWORD` | `set PGPASSWORD=[redacted] before run |
+| env के माध्यम से पहले से सेट पासवर्ड | `$env:PGPASSWORD` | `set PGPASSWORD=` before run |
 | पासवर्ड इनपुट | `Read-Host -AsSecureString` (मास्क किया गया) | `set /p` (कंसोल में दिखता है) |
-| रन के बाद पासवर्ड शून्य | हाँ (`$env:PGPASSWORD=[redacted] | हाँ (`set PGPASSWORD=[redacted] |
+| रन के बाद पासवर्ड शून्य | Yes (`$env:PGPASSWORD = $null`) | Yes (`set PGPASSWORD=`) |
 | psql.exe की स्वतः पहचान | 5-चरणीय श्रृंखला (नीचे देखें) | 4-चरणीय श्रृंखला (नीचे देखें) |
 | psql को SQL की आपूर्ति | इनलाइन `-c` आर्ग्युमेंट | `%TEMP%` में अस्थायी `.sql` फ़ाइल |
 | Atomicity | एकल PL/pgSQL `DO $$` ब्लॉक | एकल PL/pgSQL `DO $$` ब्लॉक |
@@ -91,7 +91,7 @@ cache_shared
 .\Clean_RoundCube_Cache.ps1
 
 # Silent / scripted (password pre-set in env)
-$env:PGPASSWORD=[redacted]
+$env:PGPASSWORD = 'secret'
 .\Clean_RoundCube_Cache.ps1 -NoConfirm
 
 # Custom connection
