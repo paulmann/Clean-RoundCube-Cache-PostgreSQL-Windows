@@ -1,5 +1,8 @@
 # Clean RoundCube Cache — PostgreSQL / Windows
 
+<!-- md-i18n:switcher -->
+**Read this in:** English · [Deutsch](README.de.md) · [中文](README.zh.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Русский](README.ru.md)
+
 > PowerShell 7.5 and BAT scripts to **TRUNCATE all Roundcube cache tables** in PostgreSQL on Windows.  
 > `psql.exe` is located **automatically** — no hardcoded paths required.
 
